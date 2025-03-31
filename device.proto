@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.example.grpc;
+
+service DeviceService {
+    rpc SendDeviceData (DeviceRequest) returns (DeviceResponse);
+}
+
+message DeviceRequest {
+    string device_id = 1;
+    string payload = 2;
+}
+
+message DeviceResponse {
+    string status = 1;
+}
